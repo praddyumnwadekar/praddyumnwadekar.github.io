@@ -33,7 +33,7 @@ export const RESUME_DATA = {
     },
     {
       value: "5",
-      suffix: "+yr",
+      suffix: "+ yrs",
       label: "Production Python",
       description: "Production engineering across automation, validation, backend APIs and data-driven systems.",
     },
@@ -52,7 +52,7 @@ export const RESUME_DATA = {
       period: "Jul 2021 – Present",
       location: "Pune, India",
       overview:
-        "Production Python engineering across test automation, reusable OOP libraries, software validation and log-analysis tooling for Wi-Fi and Bluetooth products. Scope grew from individual automation work toward reusable framework and tooling ownership.",
+        "Production Python engineering across test automation, Reusable Python Libraries, software validation and log-analysis tooling for Wi-Fi and Bluetooth products. Scope grew from individual automation work toward reusable framework and tooling ownership.",
       progression: [
         "T1 · 2021 — Started with production Python automation and hardware-adjacent software validation, building a strong foundation in test development and debugging.",
         "T2 · 2023 — Expanded ownership into reusable Python/OOP libraries, broader validation coverage, and automation of recurring engineering workflows.",
@@ -68,7 +68,7 @@ export const RESUME_DATA = {
       challenges: [
         {
           solution:
-            "Engineered scalable Python automation frameworks with reusable OOP libraries covering regression, stress, interoperability, and performance test suites for Bluetooth protocol validation.",
+            "Engineered scalable Python automation frameworks with Reusable Python Libraries covering regression, stress, interoperability, and performance test suites for Bluetooth protocol validation.",
           impact: "Expanded Bluetooth validation test coverage to 95%+",
         },
         {
@@ -131,7 +131,7 @@ export const RESUME_DATA = {
         "Built reusable OOP automation components and validation suites, then complemented them with automated log parsing and filtering to accelerate failure triage and support repeatable CI/CD execution.",
       impact: "95%+ Bluetooth validation coverage · 30% less active debugging effort",
       architecture: [
-        "Reusable Python/OOP layer for shared test behavior",
+        "Reusable Python components for shared test behavior",
         "Protocol-focused regression, stress, interoperability and performance suites",
         "Automated log parsing and anomaly filtering",
         "CI/CD execution for repeatable validation workflows",

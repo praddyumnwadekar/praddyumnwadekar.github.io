@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Scroll velocity ticker — technology marquee */}
       <div className="border-y border-slate-800/50 bg-[#0D1119]">
-        <ScrollVelocity baseVelocity={-2.5}>
+        <ScrollVelocity baseVelocity={-1.5}>
           PYTHON &nbsp;·&nbsp; AUTOMATION &nbsp;·&nbsp; DJANGO REST FRAMEWORK &nbsp;·&nbsp; CI/CD &nbsp;·&nbsp; BLUETOOTH VALIDATION &nbsp;·&nbsp; MYSQL &nbsp;·&nbsp; OOP ARCHITECTURE &nbsp;·&nbsp;
         </ScrollVelocity>
       </div>
@@ -35,7 +35,7 @@ export default function Home() {
       <TechnicalSkills />
 
       <div className="border-y border-slate-800/50 bg-[#0D1119]">
-        <ScrollVelocity baseVelocity={2.5}>
+        <ScrollVelocity baseVelocity={1.9}>
           REST APIS &nbsp;·&nbsp; TENSORFLOW &nbsp;·&nbsp; CNN &nbsp;·&nbsp; PYTEST &nbsp;·&nbsp; LOG ANALYSIS &nbsp;·&nbsp; PAYPAL API &nbsp;·&nbsp; DJANGO ORM &nbsp;·&nbsp;
         </ScrollVelocity>
       </div>

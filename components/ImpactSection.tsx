@@ -19,7 +19,8 @@ export default function ImpactSection() {
             >
               <div className="text-4xl sm:text-5xl font-extrabold font-mono text-white tracking-tight flex items-baseline gap-1 group-hover:scale-105 transition-transform duration-500 origin-left">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">
-                  <AnimatedCounter text={item.value} />
+                  {item.value}
+                  {item.suffix}
                 </span>
               </div>
               <h2 className="text-xs uppercase tracking-wider font-bold text-slate-300 font-mono">

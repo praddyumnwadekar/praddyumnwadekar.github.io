@@ -74,7 +74,7 @@ export default function EngineeringApproach() {
 
           <div>
             <p className="text-xs font-mono text-slate-500 mb-2">
-              // Beyond the code
+              Beyond the code
             </p>
 
             <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">

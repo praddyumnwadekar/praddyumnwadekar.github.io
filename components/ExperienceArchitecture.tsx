@@ -7,7 +7,7 @@ export default function ExperienceArchitecture() {
   const exp = RESUME_DATA.experience[0];
 
   return (
-    <section className="pb-24 px-6 max-w-6xl mx-auto">
+    <section className="mx-auto max-w-6xl px-6 pb-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -16,18 +16,18 @@ export default function ExperienceArchitecture() {
       >
         <div className="section-eyebrow">Engineering Evidence</div>
 
-        <h2 className="text-3xl font-bold text-white tracking-tight">
+        <h2 className="text-3xl font-bold tracking-tight text-white">
           How the automation work is structured
         </h2>
 
-        <p className="text-sm text-slate-400 max-w-2xl leading-relaxed">
+        <p className="max-w-2xl text-sm leading-relaxed text-slate-400">
           A high-level view of the engineering model behind the production
           validation work. Proprietary implementation details are intentionally
           omitted.
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-6">
+      <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
 
         {/* Validation Architecture */}
         <motion.div
@@ -36,7 +36,7 @@ export default function ExperienceArchitecture() {
           viewport={{ once: true }}
           className="rounded-2xl border border-slate-800 bg-[#0D121B] p-6 md:p-8"
         >
-          <div className="flex items-center justify-between mb-7">
+          <div className="mb-7 flex items-center justify-between">
             <span className="font-mono text-[11px] uppercase tracking-widest text-sky-400">
               Validation Flow
             </span>
@@ -48,26 +48,46 @@ export default function ExperienceArchitecture() {
 
           <div className="space-y-3">
             {[
-              ['01', 'Test Runner', 'repeatable execution across validation suites'],
-              ['02', 'Reusable OOP Components', 'shared behavior and lower duplication'],
-              ['03', 'Protocol Test Suites', 'regression · stress · interoperability · performance'],
-              ['04', 'Log & Result Analysis', 'filter large outputs and isolate anomalies'],
-              ['05', 'CI/CD Feedback', 'repeatable release and regression validation'],
+              [
+                '01',
+                'Test Runner',
+                'repeatable execution across validation suites',
+              ],
+              [
+                '02',
+                'Reusable Python Components',
+                'OOP design · encapsulation · abstraction · inheritance · polymorphism',
+              ],
+              [
+                '03',
+                'Protocol Test Suites',
+                'regression · stress · interoperability · performance',
+              ],
+              [
+                '04',
+                'Log & Result Analysis',
+                'filter large outputs and isolate anomalies',
+              ],
+              [
+                '05',
+                'CI/CD Feedback',
+                'repeatable release and regression validation',
+              ],
             ].map(([n, title, desc], i) => (
               <div
                 key={n}
                 className="relative flex items-start gap-4 rounded-xl border border-slate-800/80 bg-[#090D14] p-4"
               >
-                <span className="font-mono text-[10px] text-emerald-400 mt-1">
+                <span className="mt-1 shrink-0 font-mono text-[10px] text-emerald-400">
                   {n}
                 </span>
 
-                <div>
+                <div className="min-w-0">
                   <div className="text-sm font-semibold text-white">
                     {title}
                   </div>
 
-                  <div className="text-xs text-slate-500 mt-1">
+                  <div className="mt-1 text-xs text-slate-500">
                     {desc}
                   </div>
                 </div>
@@ -75,7 +95,7 @@ export default function ExperienceArchitecture() {
                 {i < 4 && (
                   <span
                     aria-hidden="true"
-                    className="absolute left-[24px] -bottom-3 h-3 w-px bg-slate-700"
+                    className="absolute bottom-[-12px] left-[24px] h-3 w-px bg-slate-700"
                   />
                 )}
               </div>
@@ -94,19 +114,26 @@ export default function ExperienceArchitecture() {
             Career Progression
           </span>
 
-          <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+          <p className="mt-3 text-xs leading-relaxed text-slate-500">
             Increasing scope from test implementation toward reusable
             frameworks, tooling ownership, and validation architecture.
           </p>
 
           {/* Timeline */}
-          <div className="mt-8 relative">
-            <div className="absolute left-2 top-2 bottom-2 w-px bg-slate-800" />
+          <div className="relative mt-8">
+            {/* Timeline Track */}
+            <div
+              aria-hidden="true"
+              className="absolute left-[7px] top-2 bottom-2 w-px bg-slate-800"
+            />
 
             <div className="space-y-7">
               {exp.progression.map((item, i) => {
                 const [stage, ...descriptionParts] = item.split(' — ');
                 const description = descriptionParts.join(' — ');
+
+                const isCompleted = i < exp.progression.length - 1;
+                const isCurrent = i === exp.progression.length - 1;
 
                 return (
                   <motion.div
@@ -118,17 +145,82 @@ export default function ExperienceArchitecture() {
                       duration: 0.4,
                       delay: i * 0.1,
                     }}
-                    className="relative pl-8"
+                    className="relative min-w-0"
                   >
-                    <span className="absolute left-0 top-1.5 h-4 w-4 rounded-full border-2 border-sky-400 bg-[#0D121B] shadow-[0_0_12px_rgba(56,189,248,.25)]" />
+                    {/* Node — always stays on the timeline */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-0 top-0 z-20 flex h-4 w-4 items-center justify-center"
+                    >
+                      <div
+                        className={[
+                          'flex h-4 w-4 items-center justify-center rounded-full border-2',
+                          isCompleted
+                            ? 'border-emerald-400 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.35)]'
+                            : 'border-sky-400 bg-[#0D121B] shadow-[0_0_12px_rgba(56,189,248,0.35)]',
+                        ].join(' ')}
+                      >
+                        {/* Completed milestone */}
+                        {isCompleted && (
+                          <svg
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            className="h-2.5 w-2.5 text-[#07100D]"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M5 10.5L8.2 13.5L15 6.5"
+                              stroke="currentColor"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        )}
 
-                    <div className="font-mono text-xs font-semibold text-sky-400">
-                      {stage}
+                        {/* Current milestone — deliberately NOT completed */}
+                        {isCurrent && (
+                          <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-sky-400"
+                          />
+                        )}
+                      </div>
                     </div>
 
-                    <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                      {description}
-                    </p>
+                    {/* Content — subtle progression only */}
+                    <div
+                      className={[
+                        'min-w-0 pl-7',
+                        i === 1 ? 'ml-1' : '',
+                        i === 2 ? 'ml-2' : '',
+                        i === 3 ? 'ml-3' : '',
+                      ].join(' ')}
+                    >
+                      <div
+                        className={[
+                          'font-mono text-xs font-semibold',
+                          isCurrent ? 'text-sky-300' : 'text-sky-400',
+                        ].join(' ')}
+                      >
+                        {stage}
+                      </div>
+
+                      <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                        {description}
+                      </p>
+
+                      {/* Current Role Indicator */}
+                      {isCurrent && (
+                        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/5 px-2.5 py-1">
+                          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-400" />
+
+                          <span className="font-mono text-[9px] uppercase tracking-wider text-sky-300">
+                            Current Role
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   </motion.div>
                 );
               })}
@@ -137,7 +229,7 @@ export default function ExperienceArchitecture() {
 
           {/* Architecture Principles */}
           <div className="mt-8 border-t border-slate-800 pt-6">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mb-3">
+            <div className="mb-3 font-mono text-[10px] uppercase tracking-widest text-slate-500">
               Architecture Principles
             </div>
 
@@ -150,7 +242,7 @@ export default function ExperienceArchitecture() {
               ].map((item) => (
                 <span
                   key={item}
-                  className="rounded-lg border border-slate-800 bg-[#090D14] px-3 py-1.5 text-[11px] font-mono text-slate-300"
+                  className="rounded-lg border border-slate-800 bg-[#090D14] px-3 py-1.5 font-mono text-[11px] text-slate-300"
                 >
                   {item}
                 </span>
