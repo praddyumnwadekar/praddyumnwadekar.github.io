@@ -53,12 +53,6 @@ export default function FeaturedProject() {
                   {(featured.engineeringDecisions ?? []).map((item, idx) => <li key={idx} className="flex gap-2"><span className="text-sky-400">+</span>{item}</li>)}
                 </ul>
               </div>
-              <div className="rounded-xl border border-slate-800 bg-[#090D14] p-5">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-3">Interview-ready questions</div>
-                <div className="flex flex-wrap gap-2">
-                  {['How is cart ownership enforced?', 'Where is query loading optimized?', 'How is payment state handled?', 'How would you scale checkout?'].map((q) => <span key={q} className="rounded-lg border border-slate-800 px-3 py-2 text-[10px] text-slate-400">{q}</span>)}
-                </div>
-              </div>
             </div>
 
             <div className="pt-6 border-t border-slate-800/60 flex flex-wrap gap-2">
