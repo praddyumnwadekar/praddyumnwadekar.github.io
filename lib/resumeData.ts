@@ -96,6 +96,8 @@ export const RESUME_DATA = {
         "An e-commerce application needs reliable cart and order state, secure user ownership, predictable payment handling, and database access that remains maintainable as features grow.",
       solution:
         "Designed feature-oriented Django apps around MVT, relational models and ORM queries; implemented authentication and ownership checks, cart/order flows, product variations, and PayPal REST API integration.",
+      impact:
+        "Designed ShipShop to model a reliable end-to-end e-commerce experience, using secure authentication, user-scoped cart/order operations, product variations, and PayPal integration to reduce transaction risk and provide a foundation that can scale with future customer and catalog growth.",
       architecture: [
         "Backend: Django & Django REST Framework",
         "Data: MySQL with relational models and Django ORM",
@@ -104,10 +106,11 @@ export const RESUME_DATA = {
         "Security: authenticated access, user ownership checks and role-aware behavior",
       ],
       engineeringDecisions: [
-        "Feature boundaries keep catalog, accounts, carts and orders independently maintainable.",
-        "Variation-aware cart items prevent products with different configurations from being conflated.",
-        "ORM relationships and targeted query loading reduce unnecessary database work in high-traffic paths.",
-        "Payment and order state are treated as separate concerns so checkout behavior remains auditable.",
+        "User-scoped authorization for cart and order operations",
+        "Variation-aware cart and inventory handling",
+        "PayPal REST API integration",
+        "Django ORM with MySQL persistence",
+        "Security-focused testing for authorization and cart operations",
       ],
       technologies: ["Python", "Django", "DRF", "MySQL", "Django ORM", "REST APIs", "PayPal API", "Bootstrap", "JavaScript"],
       githubUrl: "https://github.com/praddyumnwadekar/shipshop",
