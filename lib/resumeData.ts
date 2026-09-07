@@ -54,9 +54,10 @@ export const RESUME_DATA = {
       overview:
         "Production Python engineering across test automation, reusable OOP libraries, software validation and log-analysis tooling for Wi-Fi and Bluetooth products. Scope grew from individual automation work toward reusable framework and tooling ownership.",
       progression: [
-        "Built and maintained production-grade Python automation for hardware-adjacent software validation.",
-        "Expanded from test implementation into reusable libraries, automation architecture and debugging tooling.",
-        "Worked across validation workflows, CI/CD execution and cross-functional debugging without exposing proprietary implementation details.",
+        "T1 · 2021 — Started with production Python automation and hardware-adjacent software validation, building a strong foundation in test development and debugging.",
+        "T2 · 2023 — Expanded ownership into reusable Python/OOP libraries, broader validation coverage, and automation of recurring engineering workflows.",
+        "T2.2 · 2024 — Took greater responsibility for automation architecture, log-analysis tooling, CI/CD validation, and cross-functional debugging workflows.",
+        "T2.3 · Present — Operating with broader framework and tooling ownership across validation workflows, with a focus on maintainability, reliability, and engineering efficiency.",
       ],
       architecture: [
         "Reusable OOP components keep common test behavior centralized and reduce duplication across suites.",
